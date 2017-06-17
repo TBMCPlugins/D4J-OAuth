@@ -91,6 +91,7 @@ public class DiscordOAuth implements IDiscordOAuth {
 					AuthorizeUserResponse auth = new AuthorizeUserResponse();
 					auth.access_token = accessToken;
 					auth.expires_in = expiresIn;
+					auth.expires_at = System.currentTimeMillis() + expiresIn;
 					auth.refresh_token = oAuthResponse.getRefreshToken();
 					auth.scope = oAuthResponse.getScope();
 					auth.token_type = oAuthResponse.getTokenType();
